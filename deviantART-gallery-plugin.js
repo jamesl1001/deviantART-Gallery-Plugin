@@ -1,4 +1,4 @@
-function deviantARTGalleryPlugin(username, id) {
+function deviantARTGalleryPlugin(username, id, ratio) {
     // Inject the gallery markup
     var gallery = document.getElementById('deviantART-gallery');
     gallery.innerHTML = '<div id="ss__wrapper"></div><div id="ss__controls"><div id="ss__prev"><div id="ss__prevChev"></div></div><div id="ss__next"><div id="ss__nextChev"></div></div><div id="ss__dots"></div></div></div>';
@@ -41,7 +41,7 @@ function processDeviations(deviations) {
 
     document.getElementById('ss__wrapper').innerHTML = images;
 
-    simpleslider('16:9');
+    simpleslider(ratio);
 }
 
 /*
