@@ -27,21 +27,17 @@ function deviantARTGalleryPlugin(username, id, ratio) {
             }
 
             // async function is complete, move on
-            processDeviations(deviations);
+            var images = '';
+
+            for(var i = 0, l = deviations.length; i < l; i++) {
+                images += '<img src="' + deviations[i].image + '" alt="' + deviations[i].title + '"/>';
+            }
+
+            document.getElementById('ss__wrapper').innerHTML = images;
+
+            simpleslider(ratio);
         }
     })();
-}
-
-function processDeviations(deviations) {
-    var images = '';
-
-    for(var i = 0, l = deviations.length; i < l; i++) {
-        images += '<img src="' + deviations[i].image + '" alt="' + deviations[i].title + '"/>';
-    }
-
-    document.getElementById('ss__wrapper').innerHTML = images;
-
-    simpleslider(ratio);
 }
 
 /*
