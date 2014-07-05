@@ -3,6 +3,8 @@ deviantART-Gallery-Plugin
 
 Embed your deviantART gallery with this Javascript plugin.
 
+This plugin combines two of my other projects: [deviantART-API](https://github.com/jamesl1001/deviantART-API) and [simpleslider](https://github.com/jamesl1001/simpleslider)
+
 Usage
 -----
 
