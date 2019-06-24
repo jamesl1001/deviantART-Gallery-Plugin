@@ -11,17 +11,17 @@ function deviantARTGalleryPlugin(username, id, ratio) {
 
         window['callback'] = callback;
         var s = document.createElement('script');
-        s.src = "http://query.yahooapis.com/v1/public/yql?q=" + escape('select * from xml where url="' + url + '"') + "&_maxage=86400&format=json&callback=callback";
+        s.src = "https://api.rss2json.com/v1/api.json?callback=callback&rss_url=" + escape(url);
         document.body.appendChild(s);
         
-        function callback(feed) {
-            var items = feed.query.results.rss.channel.item;
+        function callback(json) {
+            var items = json.items;
 
             for(var i = 0, l = items.length; i < l; i++) {
                 var object = {};
 
-                object.title = items[i].title[0];
-                object.image = items[i].content.url;
+                object.title = items[i].title;
+                object.image = items[i].enclosure.link;
 
                 deviations.push(object);
             }
